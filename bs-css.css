@@ -1,0 +1,55 @@
+.battleFieldSquare {
+	width: auto;
+	background-color: #a3c6c0; 
+	border: solid 5px #a3c6c0; 
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px;
+
+}
+
+.battlebar {
+	vertical-align: -0.3em;
+}
+
+.battleCell {
+	background-color: #2cbdd4;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+	transition: 0.2s linear;
+}
+
+.battleCell:hover {
+	background: #57a639;
+
+}
+
+.battleCellHit {
+	background-color: #329977;
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+}
+
+.ships {
+	background-color: #888;
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+	transition: 0.2s linear;
+}
+
+.shipsHit {
+	background-color: #d9806f;
+
+}
+
+.shipsDestroyed {
+	background-color: #a12a22; 
+
+}
