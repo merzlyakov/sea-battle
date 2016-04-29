@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sea Battle</title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/bs-css.min.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:700italic&subset=cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header class="header-container container" id="header">
+		<div class="header-content clear-fix">
+			<div class="header-logo"><img class="header-logo-img" src="image/logo.png" alt="Лого игра морской бой">
+				<span class="header-logo-title">Морской бой</span>
+			</div>
+			<div class="header-wrapper-login">
+				<div class="header-login"><span class="header-login-item">Логин</span></div>
+				<div class="header-statistic"><span class="header-statistic-item">Статистика</span></div>
+			</div>
+		</div>
+	</header>
+
+<!-- Настройки игры -->
+
+	<main class="main-container container" id="main-content">
+		<div class="main-content clear-fix">
+			<h1 class="main-title">Настройки игры</h1>
+
+	<!-- Режим игры -->
+
+			<fieldset class="main-fieldset">
+				<legend class="main-legend">Режим игры</legend>
+				<div class="mode-game">
+					<select class="bf-type-form" name="mode-game" id="mode-game">
+						<option value="custom">Самостоятельный выбор</option>
+						<option value="easy">Легкий уровень</option>
+						<option value="normal" selected>Нормальный уровень</option>
+						<option value="hard">Трудный уровень</option>
+						<option value="extra">Экстра уровень</option>
+					</select>
+				</div>
+				<div class="mode-game-comment" id="mode-game-comment">
+					<span>Нормальный уровень сложности: поля 10х10</span>
+				</div>
+			</fieldset>
+
+<!-- Размеры участка сражения -->
+
+			<fieldset class="main-fieldset">
+				<legend class="main-legend">Территория предстоящей схватки</legend>
+				<div class="battle-field battle-field-sea">
+					<h3 class="bf-title">Морская акватория (размеры от 3 до 30 ячеек)</h3>
+					<label class="bf-type-label bf-type-sea" for="bf-sea-width">Ширина участка
+						<input type="number" min="3" max="30"
+							class="bf-type-form battle-field-width" id="bf-sea-width" value="10" required>
+					</label>
+					<label class="bf-type-label  bf-type-sea" for="bf-sea-height">Высота участка
+						<input type="number" min="3" max="30"
+							class="bf-type-form battle-field-height" id="bf-sea-height" value="10" required>
+					</label>
+				</div>
+			</fieldset>
+
+<!-- Выбор игроков -->
+
+			<fieldset class="main-fieldset">
+				<legend class="main-legend">Выбор игроков</legend>
+				<div class="battle-field battle-field-west">
+					<h3 class="bf-title">Игрок на левом поле</h3>
+					<label class="bf-type-label" for="name-player-west">Имя
+						<input type="text" maxlength="12" class="bf-type-form battle-field-name" id="name-player-west" value="Игрок 1" required>
+					</label>
+					<label class="bf-type-label" for="mode-player-west">Тип игрока
+						<select class="bf-type-form" name="mode-player" id="mode-player-west">
+							<option value="0">Компьютер</option>
+							<option value="1" selected>Человек</option>
+						</select>
+					</label>
+				</div>
+				<div class="battle-field battle-field-east">
+					<h3 class="bf-title">Игрок на правом поле</h3>
+					<label class="bf-type-label" for="name-player-east">Имя
+						<input type="text" maxlength="12" class="bf-type-form battle-field-name" id="name-player-east" value="Компьютер" required>
+					</label>
+					<label class="bf-type-label" for="mode-player-east">Тип игрока
+						<select class="bf-type-form" name="mode-player" id="mode-player-east">
+							<option value="0" selected>Компьютер</option>
+							<option value="1">Человек</option>
+						</select>
+					</label>
+				</div>
+			</fieldset>
+		</div>
+
+<!-- Кнопка старта -->
+
+		<div class="wrapper-btn" id="wrapper-btn-start">
+			<button class="btn btn-start" id="btn-start">В бой!</button>
+		</div>
+
+	</main>
+
+<!-- Поле боя -->
+
+	<section id="battle" class="battleFieldSquare"></section>
+
+	<aside>
+	</aside>
+	
+	<footer class="footer-container container" id="footer">
+		<div class="footer-content clear-fix">
+			<div class="footer-logo"><img class="footer-logo-img" src="image/logo.png" alt="Лого игра морской бой">
+				<span class="footer-logo-title">Морской бой</span>
+			</div>
+			<div class="footer-copy">
+				<span>&copy; Мерзляков Владимир Андреевич</span>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="js/bs-js.js"></script>
+</body>
+</html>
