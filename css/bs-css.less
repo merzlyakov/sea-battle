@@ -1,0 +1,455 @@
+/*********************************************
+/	css does not depend on Js
+/*********************************************/
+
+
+/*  Переменные  */
+
+@color_water: #66d9ff; /* Основной цвет фона и шрифтов */
+@width_container: 870px; /* Ширина контента */
+
+@header_size: @width_container * 0.12; /* зависимость размеров хедера от базового размера контейнера */
+@footer_size: @width_container * 0.06; /* зависимость размеров футера от базового размера контейнера */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	/* min-width: 800px;
+	max-width: 1920px; */
+	background: @color_water url(../image/bg-body.jpg) center top no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Noto Serif', serif;
+	font-size: @header_size * .19;
+	color: darken(@color_water, 35%);
+	text-shadow: 0 0 4px darken(@color_water, 25%);
+	overflow-y: scroll;
+}
+
+.clear-fix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.container {
+	width: @width_container;
+	margin: 0 auto;
+}
+
+
+
+/*********************************************
+/		Header
+/*********************************************/
+
+.header-container {
+	position: relative;
+	margin-bottom: @header_size * .0525;
+}
+
+.header-content {
+	padding: @header_size * .105 0;
+}
+
+.header-logo {
+	float: left;
+	width: @width_container * .8;
+	text-align: left;
+}
+
+.header-logo-img {
+	float: left;
+	margin-left: @header_size * .717;
+	margin-right: @header_size * .242;
+	width: @header_size;
+	height: @header_size;
+}
+
+.header-logo-title {
+	position: relative;
+	line-height: @header_size;
+	font-size: @header_size * .5;
+	color: darken(@color_water, 20%);
+	text-shadow: 7px 7px 10px darken(@color_water, 45%),
+				0px 0px 5px darken(@color_water, 55%);
+	opacity: .7;
+
+		&::after {
+			position: absolute;
+			top: -@header_size * .1916;
+			right: -@header_size * 1.1494;
+			content: '';
+			display: block;
+			width: @header_size;
+			height: @header_size;
+			background: url(../image/anchor.png) no-repeat;
+			background-size: @header_size;
+		}
+}
+
+.header-wrapper-login {
+	float: right;
+	width: @width_container * .2;
+}
+
+.header-login, .header-statistic{
+
+	@height-login-font: @header_size * .15;
+
+	height: @header_size * .5;
+	text-align: center;
+	line-height: @header_size * .5;
+	font-size: @height-login-font;
+	color: darken(@color_water, 35%);
+	text-shadow: 0px 0px 3px darken(@color_water, 25%);
+
+		&-item {
+			position: relative;
+
+				&::after {
+					position: absolute;
+					top: @height-login-font * 0.25;
+					left: -@height-login-font * 1.6;
+					content: '';
+					display: block;
+					width: @height-login-font;
+					height: @height-login-font;
+					background: url(../image/userlogin.png) no-repeat;
+					background-size: auto @height-login-font;
+				}
+		}
+}
+
+.header-login-item::after {
+	background-position: -@header_size * 0.585 0px;
+}
+
+.header-statistic-item::after {
+	background-position: 0px 0px;
+}
+
+
+
+/*********************************************
+/		Main
+/*********************************************/
+
+.main-container {
+	text-align: center;
+}
+
+.main-title {
+	opacity: .6;
+	color: darken(@color_water, 20%);
+	text-shadow: 0 0 3px darken(@color_water, 55%);
+}
+
+.main-fieldset {
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 3px solid darken(@color_water, 20%);
+	border-radius: 10px;
+	opacity: .7;
+	text-align: left;
+	background: lighten(@color_water, 15%);
+}
+
+.main-legend {
+	
+}
+
+.mode-game {
+	float: left;
+}
+
+.mode-game-comment {
+	float: right;
+	width: @width_container * .5;
+	padding: 3px 5px;
+	border: 3px solid darken(@color_water, 10%);
+	border-radius: 10px;
+	background: lighten(@color_water, 5%);
+	color: darken(@color_water, 45%);
+	text-shadow: 0 0 4px darken(@color_water, 20%);
+	line-height: @header_size * .23;
+}
+
+.mode-game-comment:hover {
+	color: darken(@color_water, 65%);
+	text-shadow: 0 0 4px darken(@color_water, 30%);
+}
+
+.bf-title {
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 0;
+	text-align: center;
+	color: darken(@color_water, 45%);
+	text-shadow: 0 0 4px darken(@color_water, 20%);
+}
+
+.bf-type-form {
+	border: 2px solid darken(@color_water, 5%);
+	border-radius: 5px;
+	background: lighten(@color_water, 15%);
+}
+
+.bf-type-form:disabled {
+	border: 2px solid darken(@color_water, 15%);
+	background: lighten(@color_water, 5%);
+}
+
+.bf-type-form:hover, .bf-type-form:focus {
+	border: 2px solid darken(@color_water, 15%);
+	background: lighten(@color_water, 25%);
+}
+
+.bf-type-form:hover:disabled, .bf-type-form:focus:disabled {
+	border: 2px solid darken(@color_water, 15%);
+	background: lighten(@color_water, 5%);
+}
+
+.battle-field {
+	width: @width_container * .4;
+	text-align: center;
+}
+
+.battle-field-sea {
+	width: 100%;
+}
+
+.battle-field-west {
+	float: left;
+}
+
+.battle-field-east {
+	float: right;
+}
+
+.battle-field-width, .battle-field-height {
+	width: 50px;
+}
+
+.bf-type-label {
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+	color: darken(@color_water, 45%);
+	text-shadow: 0 0 4px darken(@color_water, 20%);
+}
+
+.bf-type-sea {
+	display: inline-block;
+	margin-left: @width_container * .05;
+}
+
+.battle-field-name {
+	width: @width_container * .25;
+}
+
+
+
+/*********************************************
+/		Footer
+/*********************************************/
+
+.footer-container {
+	position: relative;
+	margin-top: @footer_size * .5;
+}
+
+.footer-content {
+	position: relative;
+	padding: @footer_size * .2 0;
+}
+
+.footer-content::before {
+	position: absolute;
+	top: 0;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(lighten(@color_water, 20%), darken(@color_water, 15%));
+	opacity: 0.8;
+	border-radius: 10px;
+	z-index: -1;
+}
+
+.footer-logo {
+	float: left;
+	width: @footer_size * 8;
+	text-align: left;
+}
+
+.footer-logo-img {
+	float: left;
+	margin-left: @footer_size * 2.6;
+	margin-right: @footer_size * .2;
+	width: @footer_size;
+	height: @footer_size;
+	filter: drop-shadow(0px 0px 35px darken(@color_water, 35%)); 
+}
+
+.footer-logo-title {
+	position: relative;
+	line-height: @footer_size;
+	font-size: @footer_size * .5;
+	color: lighten(@color_water, 25%);
+	text-shadow: 7px 7px 15px darken(@color_water, 20%),
+				0px 0px 10px darken(@color_water, 55%);
+	opacity: .7;
+
+		&::after {
+			position: absolute;
+			top: -@footer_size * .1916;
+			right: -@footer_size * 1.1494;
+			content: '';
+			display: block;
+			width: @footer_size;
+			height: @footer_size;
+			background: url(../image/anchor.png) no-repeat;
+			background-size: @footer_size;
+		}
+}
+
+.footer-copy {
+	float: right;
+	margin-right: @footer_size * 2;
+	line-height: @footer_size;
+	font-size: @footer_size * .3;
+	color: lighten(@color_water, 25%);
+	text-shadow: 7px 7px 15px darken(@color_water, 20%),
+				0px 0px 10px darken(@color_water, 55%);
+}
+
+.wrapper-btn {
+	position: relative;
+	margin: @width_container * .05 auto;
+	text-align: center;
+}
+
+
+.btn {
+	padding: @width_container * .035 @width_container * .055;
+	background: linear-gradient(lighten(@color_water, 20%), darken(@color_water, 15%));
+	border-radius: 50%;
+	box-shadow: 0px 0px 30px 5px darken(@color_water, 35%);
+	font-size: @width_container * .05;
+	color: lighten(@color_water, 25%);
+	text-shadow: 7px 7px 15px darken(@color_water, 20%),
+				0px 0px 10px darken(@color_water, 55%);
+
+	&:hover {
+		background: linear-gradient(lighten(@color_water, 30%), darken(@color_water, 25%));
+		box-shadow: 0px 0px 30px 5px darken(@color_water, 30%);
+		color: lighten(@color_water, 35%);
+		text-shadow: 7px 7px 5px darken(@color_water, 10%),
+					0px 0px 3px darken(@color_water, 35%);
+	}
+
+	&:hover:active {
+		background: linear-gradient(darken(@color_water, 5%), lighten(@color_water, 10%));
+		box-shadow: 0px 0px 10px 0px darken(@color_water, 20%);
+		color: lighten(@color_water, 20%);
+		text-shadow: 7px 7px 5px darken(@color_water, 10%),
+					0px 0px 3px darken(@color_water, 35%);
+	}
+}
+
+.btn-start {}
+
+.btn-stop {
+	font-size: @width_container * .03;
+	padding: @width_container * .01 @width_container * .055;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************
+/	css under control from Js
+/*********************************************/
+
+.battleFieldSquare {
+	position: relative;
+	width: auto;
+	border: solid 5px darken(@color_water, 25%);
+	box-shadow: 0px 0px 15px 0px darken(@color_water, 20%);
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px auto;
+	font-size: 14px;
+
+}
+
+.battleFieldSquare::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(darken(@color_water, 5%), lighten(@color_water, 10%)); 
+	border-radius: 10px;
+	opacity: .7;
+	z-index: -1;
+}
+
+.battlebar {
+	vertical-align: -0.3em;
+}
+
+.battleCell {
+	background-color: #2cbdd4;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+	transition: 0.2s linear;
+}
+
+.battleCell:hover {
+	background: #57a639;
+
+}
+
+.battleCellHit {
+	background-color: #329977;
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+}
+
+.ships {
+	background-color: #888;
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 2px;
+	display: inline-block;
+	transition: 0.2s linear;
+}
+
+.shipsHit {
+	background-color: #d9806f;
+
+}
+
+.shipsDestroyed {
+	background-color: #a12a22; 
+
+}
+
+
